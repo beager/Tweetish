@@ -29,7 +29,7 @@ class ComposeTweetViewController: UIViewController, UITextViewDelegate {
     var keyboardHeight: CGFloat?
     override func viewDidLoad() {
         super.viewDidLoad()
-        var user = User.currentUser!
+        let user = User.currentUser!
         
         usernameLabel.text = user.name
         userHandleLabel.text = "@\(user.screenName!)"
@@ -57,7 +57,7 @@ class ComposeTweetViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func onPostButton(sender: AnyObject) {
         TwitterClient.sharedInstance.postTweetWithStatus(tweetBodyField.text, inReplyTo: replyTweet, completion: { (success, error) -> () in
-            println(success)
+            print(success)
             if (success == true) {
                 self.delegate?.composeTweetViewController?(self, didPostTweet: true)
                 self.navigationController?.popViewControllerAnimated(true)
@@ -68,7 +68,7 @@ class ComposeTweetViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidChange(textView: UITextView) {
-        var length = count(tweetBodyField.text)
+        let length = tweetBodyField.text.characters.count
         
         let charsLeft = 140 - length
         var color: UIColor!

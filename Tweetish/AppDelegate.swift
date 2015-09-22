@@ -16,20 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
         
         if User.currentUser != nil {
+            let hamburgerViewController = storyboard.instantiateViewControllerWithIdentifier("HamburgerViewController") as! HamburgerViewController
+            let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+            menuViewController.hamburgerViewController = hamburgerViewController
+            
+            hamburgerViewController.menuViewController = menuViewController
             // Go to logged-in screen
-            println("Current user detected \(User.currentUser?.name)")
-            var vc = storyboard.instantiateViewControllerWithIdentifier("TimelineNavigationController") as! UIViewController
-            window?.rootViewController = vc
+            print("Current user detected \(User.currentUser?.name)")
+            window?.rootViewController = hamburgerViewController
         }
         return true
     }
     
     func userDidLogout() {
-        var vc = storyboard.instantiateInitialViewController() as! UIViewController
+        let vc = storyboard.instantiateInitialViewController() as UIViewController!
         window?.rootViewController = vc
     }
 
@@ -55,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         TwitterClient.sharedInstance.openURL(url)
         return true
     }

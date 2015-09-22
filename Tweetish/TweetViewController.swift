@@ -30,7 +30,7 @@ class TweetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(tweet?.text)
+        print(tweet?.text)
         
         profileImage.setImageWithURL(NSURL(string: (tweet?.user?.profileImageUrl)!))
         userNameLabel.text = tweet?.user?.name
@@ -97,7 +97,7 @@ class TweetViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
         if (segue.identifier == "replySegue") {
-            var vc = segue.destinationViewController as! ComposeTweetViewController
+            let vc = segue.destinationViewController as! ComposeTweetViewController
             vc.replyTweet = tweet
         }
     }

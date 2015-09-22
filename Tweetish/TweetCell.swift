@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TweetCellDelegate {
+    func tweetCell(tweetCell: TweetCell, didTapProfileImageWithGesture gesture: UIGestureRecognizer)
+}
+
 class TweetCell: UITableViewCell {
 
     @IBOutlet weak var retweetedLabel: UILabel!
@@ -20,12 +24,16 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetImage: UIImageView!
     @IBOutlet weak var favoriteImage: UIImageView!
     
+    var delegate: TweetCellDelegate?
+    
     var tweet: Tweet! {
         didSet {
             tweetContentLabel.text = tweet.text
             userHandleLabel.text = "@\(tweet.user!.screenName!)"
             userTitleLabel.text = tweet.user?.name
             userAvatarImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!))
+            userAvatarImage.layer.cornerRadius = 3
+            userAvatarImage.clipsToBounds = true
             retweetedLabel.hidden = true
             timestampLabel.text = tweet.getCompactDate()
             if (tweet.favorited!) {
@@ -38,7 +46,15 @@ class TweetCell: UITableViewCell {
             } else {
                 retweetImage.image = UIImage(named: "retweet-default")
             }
+            print("setting up gesture rec")
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+            userAvatarImage.addGestureRecognizer(gestureRecognizer)
         }
+    }
+    
+    func handleTap(gesture: UIGestureRecognizer) {
+        print("delegate")
+        delegate?.tweetCell(self, didTapProfileImageWithGesture: gesture)
     }
     
     override func awakeFromNib() {

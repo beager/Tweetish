@@ -33,7 +33,7 @@ class Tweet: NSObject {
         favorited = dictionary["favorited"] as? Bool
         retweeted = dictionary["retweeted"] as? Bool
         
-        var formatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
         createdAt = formatter.dateFromString(createdAtString!)
     }
@@ -52,8 +52,8 @@ class Tweet: NSObject {
         if createdAt == nil {
             return ""
         }
-        let units: NSCalendarUnit = NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth
-        let components: NSDateComponents = NSCalendar.currentCalendar().components(units, fromDate: createdAt!, toDate: NSDate(), options: nil)
+        let units: NSCalendarUnit = [NSCalendarUnit.Minute, NSCalendarUnit.Hour, NSCalendarUnit.Day, NSCalendarUnit.Month]
+        let components: NSDateComponents = NSCalendar.currentCalendar().components(units, fromDate: createdAt!, toDate: NSDate(), options: [])
 
         if (components.month > 0) {
             return "\(components.month)m"

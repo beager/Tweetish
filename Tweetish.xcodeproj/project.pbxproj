@@ -13,6 +13,11 @@
 		A96BF9951BA76ED10085D8DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BF9941BA76ED10085D8DA /* User.swift */; };
 		A96BF9971BA78D980085D8DA /* ComposeTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BF9961BA78D980085D8DA /* ComposeTweetViewController.swift */; };
 		A96BF9991BA7B8E40085D8DA /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BF9981BA7B8E30085D8DA /* TweetViewController.swift */; };
+		A9DBD0931BB0C19000777A69 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBD0921BB0C19000777A69 /* HamburgerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A9DBD0951BB0C24F00777A69 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBD0941BB0C24F00777A69 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A9DBD0971BB0C9AB00777A69 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBD0961BB0C9AB00777A69 /* MenuCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A9DBD0991BB0D69C00777A69 /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBD0981BB0D69C00777A69 /* MentionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A9DBD09B1BB0D6B300777A69 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBD09A1BB0D6B300777A69 /* UserViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A9DE32511BA7366B00D59C63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE32501BA7366B00D59C63 /* AppDelegate.swift */; };
 		A9DE32531BA7366B00D59C63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE32521BA7366B00D59C63 /* ViewController.swift */; };
 		A9DE32561BA7366B00D59C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DE32541BA7366B00D59C63 /* Main.storyboard */; };
@@ -43,6 +48,11 @@
 		A96BF9941BA76ED10085D8DA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A96BF9961BA78D980085D8DA /* ComposeTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTweetViewController.swift; sourceTree = "<group>"; };
 		A96BF9981BA7B8E30085D8DA /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		A9DBD0921BB0C19000777A69 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		A9DBD0941BB0C24F00777A69 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A9DBD0961BB0C9AB00777A69 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		A9DBD0981BB0D69C00777A69 /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
+		A9DBD09A1BB0D6B300777A69 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A9DE324B1BA7366B00D59C63 /* Tweetish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweetish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9DE324F1BA7366B00D59C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9DE32501BA7366B00D59C63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,13 +145,14 @@
 		A9DE324D1BA7366B00D59C63 /* Tweetish */ = {
 			isa = PBXGroup;
 			children = (
-				A96BF9931BA76EB00085D8DA /* Models */,
 				A96BF98E1BA765BB0085D8DA /* API */,
+				A96BF9931BA76EB00085D8DA /* Models */,
+				A9DE32D91BA73DA000D59C63 /* View Controllers */,
+				A9DE32721BA737BC00D59C63 /* Views */,
 				A9DE32501BA7366B00D59C63 /* AppDelegate.swift */,
 				A9DE32521BA7366B00D59C63 /* ViewController.swift */,
 				A9DE32541BA7366B00D59C63 /* Main.storyboard */,
-				A9DE32D91BA73DA000D59C63 /* View Controllers */,
-				A9DE32721BA737BC00D59C63 /* Views */,
+				A9DBD0961BB0C9AB00777A69 /* MenuCell.swift */,
 				A9DE32571BA7366B00D59C63 /* Images.xcassets */,
 				A9DE32591BA7366B00D59C63 /* LaunchScreen.xib */,
 				A9DE324E1BA7366B00D59C63 /* Supporting Files */,
@@ -186,6 +197,10 @@
 		A9DE32D91BA73DA000D59C63 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9DBD0981BB0D69C00777A69 /* MentionsViewController.swift */,
+				A9DBD09A1BB0D6B300777A69 /* UserViewController.swift */,
+				A9DBD0941BB0C24F00777A69 /* MenuViewController.swift */,
+				A9DBD0921BB0C19000777A69 /* HamburgerViewController.swift */,
 				A96BF9981BA7B8E30085D8DA /* TweetViewController.swift */,
 				A96BF9911BA767A10085D8DA /* TwitterLoginViewController.swift */,
 				A9DE32D71BA73D9B00D59C63 /* TimelineViewController.swift */,
@@ -240,6 +255,8 @@
 		A9DE32431BA7366B00D59C63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Bill Eager";
 				TargetAttributes = {
@@ -330,14 +347,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96BF9971BA78D980085D8DA /* ComposeTweetViewController.swift in Sources */,
+				A9DBD09B1BB0D6B300777A69 /* UserViewController.swift in Sources */,
 				A9DE32711BA737B600D59C63 /* TweetCell.swift in Sources */,
 				A96BF9991BA7B8E40085D8DA /* TweetViewController.swift in Sources */,
 				A9DE32DD1BA7403E00D59C63 /* Tweet.swift in Sources */,
 				A9DE32D81BA73D9B00D59C63 /* TimelineViewController.swift in Sources */,
+				A9DBD0991BB0D69C00777A69 /* MentionsViewController.swift in Sources */,
 				A96BF9921BA767A10085D8DA /* TwitterLoginViewController.swift in Sources */,
 				A96BF9951BA76ED10085D8DA /* User.swift in Sources */,
+				A9DBD0951BB0C24F00777A69 /* MenuViewController.swift in Sources */,
 				A9DE32531BA7366B00D59C63 /* ViewController.swift in Sources */,
 				A96BF9901BA765DA0085D8DA /* TwitterClient.swift in Sources */,
+				A9DBD0931BB0C19000777A69 /* HamburgerViewController.swift in Sources */,
+				A9DBD0971BB0C9AB00777A69 /* MenuCell.swift in Sources */,
 				A9DE32511BA7366B00D59C63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
